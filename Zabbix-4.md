@@ -36,7 +36,7 @@ mysql-master:
 启动，并且修改密码
 [root@mysql-master ~]# systemctl start mysqld
 [root@mysql-master ~]# grep password /var/log/mysqld.log
-[root@mysql-master ~]# mysqladmin -uroot -p'Tq19xEZlS9.i' password 'QianFeng@123'
+[root@mysql-master ~]# mysqladmin -uroot -p'Tq19xEZlS9.i' password 'auska@123'
 进入数据库，创建同步使用的用户
 mysql> grant replication slave,reload,super on *.* to 'repl'@'%' identified by 'Repl@2021';
 mysql> flush privileges;
@@ -46,7 +46,7 @@ mysql-slave节点配置：
 [mysql]
 host=127.0.0.1
 user=root
-password='QianFeng@123'   //这几行配置直接将用户/密码写入配置文件，命令行就不需要输入密码，就不会有警告提示
+password='auska@123'   //这几行配置直接将用户/密码写入配置文件，命令行就不需要输入密码，就不会有警告提示
 
 [mysqld]
 server-id=2
@@ -203,7 +203,7 @@ mysql> stop slave;
 [root@mysql-master ~]# vim /etc/my.cnf
 [mysqladmin]
 user=root
-password='QianFeng@123'
+password='auska@123'
 [root@mysql-master ~]# systemctl restart mysqld
 
 从节点：
