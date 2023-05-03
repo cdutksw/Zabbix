@@ -21,7 +21,9 @@
 ```shell
 [root@zabbix-agent-node1 ~]# tar -xvzf jdk-8u211-linux-x64.tar.gz  -C /usr/local/
 [root@zabbix-agent-node1 local]# cd /usr/local
-[root@zabbix-agent-node1 local]# mv jdk1.8.0_211/ java
+[root@zabbix-agent-node1 local]# mv jdk1.8.0_211/ 
+java
+vim /etc/profile
 export JAVA_HOME=/usr/local/java   #指定java安装目录
 export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH    #用于指定java系统查找命令的路径
 export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$JAVA_HOME/lib/tools.jar  #类的路径，在编译运行java程序时，如果有调用到其他类的时候，在classpath中寻找需要的类。
